@@ -1,0 +1,88 @@
+﻿notes from review session 3/7/17
+
+
+file stores tables - slotted page which stores byte records
+files of pages, pages of records
+        two types
+        fixed length records - fast access using arithmetic but waste space
+        variable length - delimeter and fiedl lengths use header record to access
+        
+        fixed length - uses bitmap (project 1)
+        variable length - slot directory to store length and pointer to beginning of record
+
+
+        buffer pool - when page is requested nad not there usebuffer replacement policy to                 replace based on access pattern - pick whatever rplacement poliy to reduce I/Os
+
+
+        clock replacement policy has reference “second chance” bit i dunno when to use it
+
+
+        k - search key, (a subset of the table’s columns) e.g. 
+        key i
+        
+        NOTE: look at example B+ tree why is minimum keys to raise height 3 and not 4???
+        
+
+
+general external merge sort 
+        to sort file with N pages using B buffer pages
+        pass 0 : use B buffer pages. produce n/B sorted runs (groups of sorted pages) with B                 pages each
+        now going to sort the B sized chunks
+        pass 1: last pass
+        
+        cost of external merge sort: PUT ON CHEAT SHEET LMAO
+        1 + log of b-1 (N/B) 
+        in each pass 1, 2, 3, can merge B-1 sorted runs of any length
+        Cost in each pass read and write all N pages so it’s 2*N per pass
+
+
+hashing sort
+partition phase (DIVIDE) -
+        one page at a time into input buffer and then hash them to appropriate output buffer
+        when output buffers are filled write it to disk
+        do this until do all n pages , will have b- 1  partitions
+rehash phase (CONQUER)
+        apply different finer grained hash function and create in memory hash table 
+
+
+which is better? he skipped it LOOK UP LATER
+
+
+heap sort - use buffer to keep heaps in memory
+        main heap H1 is not empty
+                remove smallest record write to output (smallest value? size?)
+                take next input item and if smaller put in H2 if larger put in H!
+        if H1 empty
+                do same algorithm but switch H1 and H2
+        better if input is partially sorted
+        on average runs are longer - avg run length: 2(B-2) - because two buffer pages used for                 heaps and times 2 because read write???? i dk
+        after pass 0 runs are all guaranteed to be length B
+
+
+block nested loop join
+        b = number of buffers available
+        1 buff for streaming input
+        1 for streaming output
+        b - 2 buffers hold pages of outer relation
+        cost = (R/(B-2))*S + R
+
+
+index nested loop join
+if there is a match or multiple, has to retrieve them
+im match at leaf cost is height of index tree
+matches must be fetched after finding RID at leaf
+        clustered = 
+
+
+grace hash join 
+        stage 1 partition = 
+
+
+system R optimizer (selinger)  - LOOK AT SLIDE
+        plan space -what plans are considered
+        cost estimation -
+        search algorithm - how to find lowest cost plan?
+
+
+search algorithm 
+        get interesting order whatever that is if 1) already sorted dataset columns? 2) and sorted         column used later on
