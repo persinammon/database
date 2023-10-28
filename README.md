@@ -8,7 +8,11 @@ anyway (now that I have attained more mathematical/computer science maturity).
 
 ## Links
 
-Projects: [https://cs186.gitbook.io/project/](https://cs186.gitbook.io/project/)
+Projects: [https://cs186.gitbook.io/project/](https://cs186.gitbook.io/project/) 
+
+
 Starter code: [https://github.com/berkeley-cs186/fa23-rookiedb/](https://github.com/berkeley-cs186/fa23-rookiedb/)
+
+
 Class website (current): [https://cs186berkeley.net/](https://cs186berkeley.net/)
 
