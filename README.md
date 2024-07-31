@@ -16,3 +16,7 @@ Starter code: [https://github.com/berkeley-cs186/fa23-rookiedb/](https://github.
 
 Class website (current): [https://cs186berkeley.net/](https://cs186berkeley.net/)
 
+## Update and Final Verdict
+
+Decided to desist and deprecate. I am not really a computer scientist, even though I like software. Did not see point in hundred percent learning it without building on top of it or deepening it afterwards.
+
